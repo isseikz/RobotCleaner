@@ -6,7 +6,7 @@ ToF による段差検知と、micro-ROS による ROS 2 連携を扱う。
 ## 開発環境
 
 ターゲットは M5StickC Plus2（ESP32-PICO-V3-02, Flash 8MB / PSRAM 2MB）。
-[PlatformIO](https://platformio.org/) + Arduino framework + [M5Unified](https://github.com/m5stack/M5Unified) で構築する。
+[PlatformIO](https://platformio.org/) + [ESP-IDF](https://docs.espressif.com/projects/esp-idf/)（FreeRTOS）で構築する（[ADR-0002](docs/adr/0002-esp32-development-platform.md)）。
 
 ### セットアップ
 

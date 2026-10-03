@@ -1,22 +1,15 @@
-#include <M5Unified.h>
+#include "esp_log.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
 
-void setup() {
-    auto cfg = M5.config();
-    M5.begin(cfg);
-
-    M5.Display.setRotation(1);
-    M5.Display.setTextSize(2);
-    M5.Display.println("RobotCleaner");
-
-    Serial.println("RobotCleaner boot");
+namespace {
+constexpr char kTag[] = "RobotCleaner";
 }
 
-void loop() {
-    M5.update();
+extern "C" void app_main(void) {
+    ESP_LOGI(kTag, "RobotCleaner boot");
 
-    if (M5.BtnA.wasPressed()) {
-        Serial.println("BtnA pressed");
+    while (true) {
+        vTaskDelay(pdMS_TO_TICKS(1000));
     }
-
-    delay(10);
 }
